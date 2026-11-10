@@ -63,8 +63,8 @@ function maybeRunQualityGate(filePath) {
     return;
   }
 
-  // Use the existing file's canonical path for project-root comparisons and
-  // formatter arguments. A disappeared file fails closed in run().
+  // Use the existing file's canonical path to locate the project root and as
+  // the formatter argument. A disappeared file fails closed in run().
   filePath = fs.realpathSync(filePath);
 
   const ext = path.extname(filePath).toLowerCase();
